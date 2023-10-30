@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def show
+    @user = User.find_by(id: params["id"])
+    render :show
+  end
+
   def update
     @user = User.find_by(id: params[:id])
     @user.update(
